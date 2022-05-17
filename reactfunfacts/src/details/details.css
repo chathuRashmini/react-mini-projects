@@ -35,6 +35,11 @@ li {
     line-height: 19px;
 }
 
+li::marker {
+    font-size: 1.4rem;
+    color: #61DAFB;
+}
+
 .details__img-div-section {
     width: 20%;
 }

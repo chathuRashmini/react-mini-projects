@@ -1,0 +1,32 @@
+.left__box {
+    width: 550px;
+    height: 868px;
+    left: 65px;
+    top: 53px;
+    background: #23252C;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .left__card {
+    width: 317px;
+    height: 780px;
+    left: 116px;
+    top: 44px;
+    background: #0931bf;
+    border-radius: 10px;
+} */
+
+/* .left__img-style {}
+
+.left__detail-section {}
+
+.left__intro-section {}
+
+.left__btn-container {}
+
+.left__about-section {}
+
+.left__interests-section {}
+
+.left__socialmedia-icons {} */
