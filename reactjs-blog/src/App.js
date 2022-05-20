@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Route, Switch, useHistory } from 'react-router-dom'
+import {Route, Routes, useHistory} from 'react-router-dom';
 
 import About from './About'
 import Footer from './Footer'
@@ -15,11 +15,15 @@ function App() {
     <div className="App">
       <Header />
       <Navbar />
-      <Home />
-      <NewPost />
-      <PostPage />
-      <About />
-      <Missing />
+      
+      <Routes>
+        <Route exact path="/" element={<Home />}/>
+        <Route path="/post" element={<NewPost />}/>
+        <Route path="/post/:id" element={<PostPage />}/>
+        <Route path="/about" element={<About />}/>
+        <Route path="*" element={<Missing />}/>
+      </Routes>
+
       <Footer />
     </div>
   );
