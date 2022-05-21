@@ -40,6 +40,14 @@ function App() {
 
   const navigate = useNavigate()
 
+  useEffect(() => {
+    const filteredResult = posts.filter(post => 
+      ((post.body).toLowerCase()).includes(search.toLowerCase())
+      || ((post.title).toLowerCase()).includes(search.toLowerCase())
+    )
+    setSearchResults(filteredResult.reverse())
+  }, [posts, search])
+
   const handleDelete = (id) => {
     const postList = posts.filter(post => post.id !== id)
     setPosts(postList)
@@ -69,7 +77,7 @@ function App() {
       />
       
       <Routes>
-        <Route exact path="/" element={<Home posts={posts} />}/>
+        <Route exact path="/" element={<Home posts={searchResults} />}/>
         
         <Route path="/post" element={
           <NewPost 
