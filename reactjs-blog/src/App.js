@@ -3,6 +3,7 @@ import {Route, Routes, useNavigate} from 'react-router-dom';
 import { format } from 'date-fns'
 
 import About from './About'
+import EditPost from './EditPost';
 import Footer from './Footer'
 import Header from './Header'
 import Home from './Home'
@@ -11,34 +12,38 @@ import Navbar from './Navbar'
 import NewPost from './NewPost'
 import PostPage from './PostPage'
 
+import api from './api/posts'
+
 function App() {
 
   const [ search, setSearch ] = useState('')
   const [ searchResults, setSearchResults ] = useState([])
   const [ postTitle, setPostTitle ] = useState('')
   const [ postBody, setPostBody ] = useState('')
-  const [ posts, setPosts ] = useState([
-    {
-      id: 1,
-      title: "My First Blog",
-      datetime: "July 01, 2021 11:17:12 AM",
-      body: "This is my first article for you to go through."
-    },
-    {
-      id: 2,
-      title: "My Second Blog",
-      datetime: "July 01, 2021 11:17:12 AM",
-      body: "This is my first article for you to go through."
-    },
-    {
-      id: 3,
-      title: "My Third Blog",
-      datetime: "July 01, 2021 11:17:12 AM",
-      body: "This is my first article for you to go through."
-    },
-  ])
+  const [ eidtTitle, setEditTitle ] = useState('')
+  const [ eidtBody, setEditBody ] = useState('')
+  const [ posts, setPosts ] = useState([])
 
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await api.get('/posts')
+        setPosts(response.data)
+      } catch (err) {
+        if (err.response) {
+          console.log(err.response.data)
+          console.log(err.response.status)
+          console.log(err.response.headers)
+        } else {
+          console.log(`Error: ${err.message}`)
+        }
+      }
+    }
+
+    fetchPosts()
+  }, [])
 
   useEffect(() => {
     const filteredResult = posts.filter(post => 
@@ -48,24 +53,51 @@ function App() {
     setSearchResults(filteredResult.reverse())
   }, [posts, search])
 
-  const handleDelete = (id) => {
-    const postList = posts.filter(post => post.id !== id)
-    setPosts(postList)
-    navigate.push('/')
-  }
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     
     const id = posts.length ? posts[posts.length-1].id + 1 : 1
     const datetime = format(new Date(), 'MMMM dd yyyy pp')
     const newPost = { id, title: postTitle, datetime, body: postBody}
-    const allPosts = [...posts, newPost]
 
-    setPosts(allPosts)
-    setPostTitle('')
-    setPostBody('')
-    navigate.push('/')
+    try {
+      const response = await api.post('/posts', newPost)
+      const allPosts = [ ...posts, response.data ]
+
+      setPosts(allPosts)
+      setPostTitle('')
+      setPostBody('')
+      navigate.push('/')
+    } catch (error) {
+      console.log(`Error: ${error.message}`)
+    }
+  }
+
+  const handleEdit = async (id) => {
+    const datetime = format(new Date(), 'MMMM dd yyyy pp')
+    const updatedPost = { id, title: eidtTitle, datetime, body: eidtBody}
+
+    try {
+      const response = await api.put(`/posts/${id}`, updatedPost)
+      setPosts( posts.map(post => post.id === id ? { ...response.data } : post ))
+      setEditTitle('')
+      setEditBody('')
+      navigate.push('/')
+    } catch (error) {
+      console.log(`Error: ${error.message}`)
+    }
+  }
+
+  const handleDelete = async (id) => {
+    try {
+      await api.delete(`/posts/${id}`)
+      const postList = posts.filter(post => post.id !== id)
+      setPosts(postList)
+      navigate.push('/')
+    } catch (error) {
+      console.log(`Error: ${error.message}`)
+    }
+    
   }
   
   return (
@@ -86,6 +118,17 @@ function App() {
             setPostTitle = {setPostTitle}
             postBody = {postBody}
             setPostBody = {setPostBody}
+          />
+        } />
+
+        <Route path="/edit/:id" element={
+          <EditPost 
+            posts={posts}
+            handleEdit={handleEdit} 
+            eidtBody={eidtBody} 
+            setEditBody={setEditBody} 
+            eidtTitle={eidtTitle} 
+            setEditTitle={setEditTitle}
           />
         } />
 

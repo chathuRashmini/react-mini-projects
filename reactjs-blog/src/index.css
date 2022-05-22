@@ -28,18 +28,19 @@ body {
 
 .App {
   width: 100%;
+  max-width: 800px;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border: 1px solid #333;
-  box-shadow: 0px 0px 15px rgb(65, 61, 61);
+  box-shadow: 0px 0px 15px gray;
 }
 
 .Header, .Footer {
   width: 100%;
-  background-color: #2196b3;
+  background-color: #66d8f5;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -62,7 +63,7 @@ body {
 
 .Nav {
   width: 100%;
-  background-color: #0a5264;
+  background-color: #333;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -197,13 +198,10 @@ body {
   padding: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
-  background-color: rgb(10, 160, 187);
-  border-color: rgb(164, 163, 163);
 }
 
-.Missing h2, .PostPage h2, 
-.Missing p, .PostPage p {
-  margin-bottom: 1rem;
+.Missing p, .PostPage p, .NewPost p {
+  margin-top: 1rem;
 }
 
 .PostPage button {
@@ -211,10 +209,18 @@ body {
   min-width: 48px;
   border-radius: 0.25rem;
   padding: 0.5rem;
+  margin-right: 0.5rem;
   font-size: 1rem;
-  background-color: rgb(202, 11, 11);
   color: #fff;
   cursor: pointer;
+}
+
+.deleteButton {
+  background-color: red;
+}
+
+.editButton {
+  background-color: #333;
 }
 
 .statusMsg {
