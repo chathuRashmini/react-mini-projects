@@ -14,6 +14,9 @@ import PostPage from './PostPage'
 
 import api from './api/posts'
 
+import useWindowSize from './hooks/useWindowSize';
+import useAxiosFetch from './hooks/useAxiosFetch';
+
 function App() {
 
   const [ search, setSearch ] = useState('')
@@ -25,6 +28,14 @@ function App() {
   const [ posts, setPosts ] = useState([])
 
   const navigate = useNavigate()
+
+  const { width } = useWindowSize()
+
+  const { data, fetchError, isLoading } = useAxiosFetch('http://localhost:3500/posts')
+
+  useEffect(() => {
+    setPosts(data)
+  }, [data])
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -102,14 +113,20 @@ function App() {
   
   return (
     <div className="App">
-      <Header title = "React JS Blog" />
+      <Header title = "React JS Blog" width={width} />
       <Navbar 
         search={search}
         setSearch={setSearch}
       />
       
       <Routes>
-        <Route exact path="/" element={<Home posts={searchResults} />}/>
+        <Route exact path="/" element={
+          <Home 
+            posts={searchResults} 
+            fetchError={fetchError}
+            isLoading={isLoading}
+          />
+        }/>
         
         <Route path="/post" element={
           <NewPost 
