@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button {
+  width: 150px;
+  height: 40px;
+  color: azure;
+  background-color: blueviolet;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+button:hover {
+  color: aliceblue;
+  background-color: rgb(63, 14, 109);
+}
+
+.useState-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #000;
+}
+
+.form-style {
+  margin: 5px;
+}
+
+input {
+  margin: 5px;
+  width: 250px;
+  height: 40px;
+  background-color: rgb(196, 220, 241);
+  border: 2px solid rgb(159, 198, 233);
+}
