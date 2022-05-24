@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
 }
 
 code {
@@ -29,10 +30,10 @@ button:hover {
 
 .useState-section {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin: 10px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid rgb(190, 79, 153);
 }
 
 .form-style {
@@ -45,4 +46,12 @@ input {
   height: 40px;
   background-color: rgb(196, 220, 241);
   border: 2px solid rgb(159, 198, 233);
+}
+
+.App {
+  margin: 10px 20px;
+}
+
+h2 {
+  color: coral;
 }

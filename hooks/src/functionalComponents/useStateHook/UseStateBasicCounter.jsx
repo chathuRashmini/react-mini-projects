@@ -9,7 +9,8 @@ const UseStateBasicCounter = () => {
     }
 
     return (
-        <div>
+        <div style={{ marginLeft: "40px" }}>
+            <h3>Using useState hook</h3>
             <button onClick={increment}>Functional Count: {count}</button>
         </div>
     )
