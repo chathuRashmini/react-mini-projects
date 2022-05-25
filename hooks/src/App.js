@@ -5,6 +5,8 @@ import ClassCounterUsestate from "./classComponents/ClassCounterUsestate";
 import ClassIntervalUseeffect from "./classComponents/ClassIntervalUseeffect";
 import ClassMouseUseeffect from "./classComponents/ClassMouseUseeffect";
 import DummyApp from "./DummyApp";
+import UsecallbackAccurateParent from "./functionalComponents/useCallbackHook/UsecallbackAccurateParent";
+import UsecallbackParent from "./functionalComponents/useCallbackHook/UsecallbackParent";
 import UsecontextCompA from "./functionalComponents/useContextHook/UsecontextCompA";
 import UsecontextCompD from "./functionalComponents/useContextHook/UsecontextCompD";
 import FetchPost from "./functionalComponents/useEffectHook/FetchPost";
@@ -115,6 +117,15 @@ function App() {
         <div className="useState-section">
           <UsestateFetchData />
           <UsereducerFetchData />
+        </div>
+      </div>
+
+      <div style={{ backgroundColor: "lightgreen" }}>
+        <h2>05. useCallback() Hook</h2>
+
+        <div className="useState-section">
+          <UsecallbackParent />
+          <UsecallbackAccurateParent />
         </div>
       </div>
     </div>
