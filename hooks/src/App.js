@@ -4,6 +4,7 @@ import ClassCounterUseeffect from "./classComponents/ClassCounterUseeffect";
 import ClassCounterUsestate from "./classComponents/ClassCounterUsestate";
 import ClassIntervalUseeffect from "./classComponents/ClassIntervalUseeffect";
 import ClassMouseUseeffect from "./classComponents/ClassMouseUseeffect";
+import DummyApp from "./DummyApp";
 import UsecontextCompA from "./functionalComponents/useContextHook/UsecontextCompA";
 import UsecontextCompD from "./functionalComponents/useContextHook/UsecontextCompD";
 import FetchPost from "./functionalComponents/useEffectHook/FetchPost";
@@ -14,7 +15,9 @@ import UseEffectInterval from "./functionalComponents/useEffectHook/UseEffectInt
 import UsereducerCounter from "./functionalComponents/useReducerHook/UsereducerCounter";
 import UsereducerCounterThree from "./functionalComponents/useReducerHook/UsereducerCounterThree";
 import UsereducerCounterTwo from "./functionalComponents/useReducerHook/UsereducerCounterTwo";
+import UsereducerFetchData from "./functionalComponents/useReducerHook/UsereducerFetchData";
 import UseStateBasicCounter from "./functionalComponents/useStateHook/UseStateBasicCounter";
+import UsestateFetchData from "./functionalComponents/useStateHook/UsestateFetchData";
 import UseStateThreeFunctionsCounter from "./functionalComponents/useStateHook/UseStateThreeFunctionsCounter";
 import UseStateWithArray from "./functionalComponents/useStateHook/UseStateWithArray";
 import UseStateWithObject from "./functionalComponents/useStateHook/UseStateWithObject";
@@ -103,6 +106,15 @@ function App() {
 
         <div className="useState-section">
           <UsereducerCounterThree />
+        </div>
+
+        <div className="useState-section">
+          <DummyApp />
+        </div>
+
+        <div className="useState-section">
+          <UsestateFetchData />
+          <UsereducerFetchData />
         </div>
       </div>
     </div>
