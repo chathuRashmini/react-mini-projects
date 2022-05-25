@@ -11,6 +11,9 @@ import FetchPosts from "./functionalComponents/useEffectHook/FetchPosts";
 import MouseContainer from "./functionalComponents/useEffectHook/MouseContainer";
 import UseEffectBasicCounter from "./functionalComponents/useEffectHook/UseEffectBasicCounter";
 import UseEffectInterval from "./functionalComponents/useEffectHook/UseEffectInterval";
+import UsereducerCounter from "./functionalComponents/useReducerHook/UsereducerCounter";
+import UsereducerCounterThree from "./functionalComponents/useReducerHook/UsereducerCounterThree";
+import UsereducerCounterTwo from "./functionalComponents/useReducerHook/UsereducerCounterTwo";
 import UseStateBasicCounter from "./functionalComponents/useStateHook/UseStateBasicCounter";
 import UseStateThreeFunctionsCounter from "./functionalComponents/useStateHook/UseStateThreeFunctionsCounter";
 import UseStateWithArray from "./functionalComponents/useStateHook/UseStateWithArray";
@@ -87,6 +90,19 @@ function App() {
               <UsecontextCompD />
             </ChannelContext.Provider>
           </UserContext.Provider>
+        </div>
+      </div>
+
+      <div style={{ backgroundColor: "lightblue" }}>
+        <h2>04. useReducer() Hook</h2>
+
+        <div className="useState-section">
+          <UsereducerCounter />
+          <UsereducerCounterTwo />
+        </div>
+
+        <div className="useState-section">
+          <UsereducerCounterThree />
         </div>
       </div>
     </div>
