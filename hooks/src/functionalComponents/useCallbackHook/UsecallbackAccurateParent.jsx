@@ -6,7 +6,6 @@ import Count from './Count'
 
 const UsecallbackAccurateParent = () => {
     
-
     const [ age, setAge ] = useState(0)
     const [ salary, setSalary ] = useState(1000)
 

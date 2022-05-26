@@ -14,6 +14,7 @@ import FetchPosts from "./functionalComponents/useEffectHook/FetchPosts";
 import MouseContainer from "./functionalComponents/useEffectHook/MouseContainer";
 import UseEffectBasicCounter from "./functionalComponents/useEffectHook/UseEffectBasicCounter";
 import UseEffectInterval from "./functionalComponents/useEffectHook/UseEffectInterval";
+import UsememoCounter from "./functionalComponents/useMemoHook/UsememoCounter";
 import UsereducerCounter from "./functionalComponents/useReducerHook/UsereducerCounter";
 import UsereducerCounterThree from "./functionalComponents/useReducerHook/UsereducerCounterThree";
 import UsereducerCounterTwo from "./functionalComponents/useReducerHook/UsereducerCounterTwo";
@@ -127,6 +128,12 @@ function App() {
           <UsecallbackParent />
           <UsecallbackAccurateParent />
         </div>
+      </div>
+
+      <div style={{ backgroundColor: "lightpink" }}>
+        <h2>06. useMemo() Hook</h2>
+
+        <UsememoCounter />
       </div>
     </div>
   );
