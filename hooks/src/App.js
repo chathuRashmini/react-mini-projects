@@ -20,6 +20,7 @@ import FetchPosts from "./functionalComponents/useEffectHook/FetchPosts";
 import MouseContainer from "./functionalComponents/useEffectHook/MouseContainer";
 import UseEffectBasicCounter from "./functionalComponents/useEffectHook/UseEffectBasicCounter";
 import UseEffectInterval from "./functionalComponents/useEffectHook/UseEffectInterval";
+import UseimperativeHandleHook from "./functionalComponents/useImperativeHanldeHook/UseimperativeHandleHook";
 import UselayoutEffectHook from "./functionalComponents/useLayoutEffectHook/UselayoutEffectHook";
 import UsememoCounter from "./functionalComponents/useMemoHook/UsememoCounter";
 import UsereducerCounter from "./functionalComponents/useReducerHook/UsereducerCounter";
@@ -168,8 +169,16 @@ function App() {
         </div>
       </div>
 
+      <div style={{ backgroundColor: "green" }}>
+        <h2>09. useImperativeHandleHook() Hook</h2>
+
+        <div className="useState-section">
+          <UseimperativeHandleHook />
+        </div>
+      </div>
+
       <div style={{ backgroundColor: "crimson" }}>
-        <h2>08. custome Hooks</h2>
+        <h2>10. custome Hooks</h2>
 
         <div className="useState-section">
           <DocTitleOneHook />
