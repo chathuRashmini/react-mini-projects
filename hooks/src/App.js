@@ -6,6 +6,11 @@ import ClassIntervalUseeffect from "./classComponents/ClassIntervalUseeffect";
 import ClassMouseUseeffect from "./classComponents/ClassMouseUseeffect";
 import ClassTimerUseref from "./classComponents/ClassTimerUseref";
 import DummyApp from "./DummyApp";
+import CustomCounterOne from "./functionalComponents/customHooks/CustomCounterOne";
+import CustomCounterTwo from "./functionalComponents/customHooks/CustomCountertwo";
+import DocTitleOneHook from "./functionalComponents/customHooks/DocTitleOneHook";
+import DocTitleTwoHook from "./functionalComponents/customHooks/DocTitleTwoHook";
+import UserForm from "./functionalComponents/customHooks/UserForm";
 import UsecallbackAccurateParent from "./functionalComponents/useCallbackHook/UsecallbackAccurateParent";
 import UsecallbackParent from "./functionalComponents/useCallbackHook/UsecallbackParent";
 import UsecontextCompA from "./functionalComponents/useContextHook/UsecontextCompA";
@@ -142,7 +147,7 @@ function App() {
       </div>
 
       <div style={{ backgroundColor: "lightyellow" }}>
-        <h2>06. useRef() Hook</h2>
+        <h2>07. useRef() Hook</h2>
 
         <div className="useState-section">
           <UserefFocusInput />
@@ -151,6 +156,24 @@ function App() {
         <div className="useState-section">
           <ClassTimerUseref />
           <UserefTimer />
+        </div>
+      </div>
+
+      <div style={{ backgroundColor: "crimson" }}>
+        <h2>08. custome Hooks</h2>
+
+        <div className="useState-section">
+          <DocTitleOneHook />
+          <DocTitleTwoHook />
+        </div>
+
+        <div className="useState-section">
+          <CustomCounterOne />
+          <CustomCounterTwo />
+        </div>
+
+        <div className="useState-section">
+          <UserForm />
         </div>
       </div>
     </div>
