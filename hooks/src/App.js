@@ -4,6 +4,7 @@ import ClassCounterUseeffect from "./classComponents/ClassCounterUseeffect";
 import ClassCounterUsestate from "./classComponents/ClassCounterUsestate";
 import ClassIntervalUseeffect from "./classComponents/ClassIntervalUseeffect";
 import ClassMouseUseeffect from "./classComponents/ClassMouseUseeffect";
+import ClassTimerUseref from "./classComponents/ClassTimerUseref";
 import DummyApp from "./DummyApp";
 import UsecallbackAccurateParent from "./functionalComponents/useCallbackHook/UsecallbackAccurateParent";
 import UsecallbackParent from "./functionalComponents/useCallbackHook/UsecallbackParent";
@@ -19,6 +20,8 @@ import UsereducerCounter from "./functionalComponents/useReducerHook/UsereducerC
 import UsereducerCounterThree from "./functionalComponents/useReducerHook/UsereducerCounterThree";
 import UsereducerCounterTwo from "./functionalComponents/useReducerHook/UsereducerCounterTwo";
 import UsereducerFetchData from "./functionalComponents/useReducerHook/UsereducerFetchData";
+import UserefFocusInput from "./functionalComponents/useRefHook/UserefFocusInput";
+import UserefTimer from "./functionalComponents/useRefHook/UserefTimer";
 import UseStateBasicCounter from "./functionalComponents/useStateHook/UseStateBasicCounter";
 import UsestateFetchData from "./functionalComponents/useStateHook/UsestateFetchData";
 import UseStateThreeFunctionsCounter from "./functionalComponents/useStateHook/UseStateThreeFunctionsCounter";
@@ -133,7 +136,22 @@ function App() {
       <div style={{ backgroundColor: "lightpink" }}>
         <h2>06. useMemo() Hook</h2>
 
-        <UsememoCounter />
+        <div className="useState-section">
+          <UsememoCounter />
+        </div>
+      </div>
+
+      <div style={{ backgroundColor: "lightyellow" }}>
+        <h2>06. useRef() Hook</h2>
+
+        <div className="useState-section">
+          <UserefFocusInput />
+        </div>
+
+        <div className="useState-section">
+          <ClassTimerUseref />
+          <UserefTimer />
+        </div>
       </div>
     </div>
   );
