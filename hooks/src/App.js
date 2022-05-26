@@ -20,6 +20,7 @@ import FetchPosts from "./functionalComponents/useEffectHook/FetchPosts";
 import MouseContainer from "./functionalComponents/useEffectHook/MouseContainer";
 import UseEffectBasicCounter from "./functionalComponents/useEffectHook/UseEffectBasicCounter";
 import UseEffectInterval from "./functionalComponents/useEffectHook/UseEffectInterval";
+import UselayoutEffectHook from "./functionalComponents/useLayoutEffectHook/UselayoutEffectHook";
 import UsememoCounter from "./functionalComponents/useMemoHook/UsememoCounter";
 import UsereducerCounter from "./functionalComponents/useReducerHook/UsereducerCounter";
 import UsereducerCounterThree from "./functionalComponents/useReducerHook/UsereducerCounterThree";
@@ -156,6 +157,14 @@ function App() {
         <div className="useState-section">
           <ClassTimerUseref />
           <UserefTimer />
+        </div>
+      </div>
+
+      <div style={{ backgroundColor: "brown" }}>
+        <h2>08. useLayoutEffect() Hook</h2>
+
+        <div className="useState-section">
+          <UselayoutEffectHook />
         </div>
       </div>
 

@@ -24,7 +24,7 @@ function FetchPosts() {
                 { posts.map(post => {
                     if(post.id <= 10) {
                         return (
-                            <li>{post.title}</li>
+                            <li key={post.id}>{post.title}</li>
                         )
                     }
                 })}
